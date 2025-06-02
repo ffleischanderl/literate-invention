@@ -1,0 +1,11 @@
+name: install-netlify-package
+on: [push]
+jobs:
+  check-netlify-version:
+    runs-on: ubunti-latest
+    steps:
+      - uses: actions/chechout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install netlify-cli -g
+      - run: npm netlify -v
+      
